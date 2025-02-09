@@ -1,3 +1,23 @@
+# Master JavaScript Interview Questions
+
+Live site: https://master-javascript-interview-questions.vercel.app/
+
+A comprehensive web application designed to help developers prepare for JavaScript technical interviews. This platform offers:
+
+- 📚 **Comprehensive Coverage**: In-depth exploration of essential JavaScript concepts including closures, promises, prototypes, and modern ES6+ features that frequently appear in technical interviews.
+
+- 💡 **Real-world Examples**: Practice with authentic interview questions from leading tech companies, accompanied by detailed explanations and solutions.
+
+- 🎯 **Interactive Learning**: Hands-on coding challenges with immediate feedback to reinforce your understanding of key concepts.
+
+- 🚀 **Structured Learning Path**: A carefully curated progression from fundamental concepts to advanced topics, aligned with what hiring managers expect.
+
+Built with Next.js and modern web technologies, this platform provides an intuitive, responsive interface for both desktop and mobile users. Whether you're preparing for your first JavaScript interview or looking to strengthen your existing knowledge, this resource offers valuable practice material and insights.
+
+Visit our [live site](https://master-javascript-interview-questions.vercel.app/) to start your interview preparation journey.
+
+
+## Project Wizard Creation Notes
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
