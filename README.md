@@ -1,6 +1,6 @@
 # Master JavaScript Interview Questions
 
-Live site: https://master-javascript-interview-questions.vercel.app/
+Live site: https://learn-javascript-interview-questions.vercel.app/
 
 A comprehensive web application designed to help developers prepare for JavaScript technical interviews. This platform offers detailed explanations and examples for over 30 essential JavaScript concepts.
 
