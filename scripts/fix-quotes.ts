@@ -1,32 +1,47 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const questionsDir = path.join(process.cwd(), 'src', 'app', 'questions');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-function fixQuotes(content: string): string {
-  // Only fix quotes within JSX tags, not in code blocks
-  return content.replace(
-    /(<[^>]*>)(.*?)(<\/[^>]*>)/gs,
-    (match, openTag, content, closeTag) => {
-      const fixedContent = content
-        .replace(/(?<!\\)'/g, '&apos;')
-        .replace(/(?<!\\)"/g, '&quot;');
-      return `${openTag}${fixedContent}${closeTag}`;
+function escapeQuotes(content: string): string {
+  // First, identify and protect code blocks
+  const codeBlocks: string[] = [];
+  const contentWithoutCode = content.replace(
+    /\{`([^`]*)`\}/g,
+    (match) => {
+      codeBlocks.push(match);
+      return `__CODE_BLOCK_${codeBlocks.length - 1}__`;
     }
+  );
+
+  // Replace quotes in JSX content but protect className and other attributes
+  const processedContent = contentWithoutCode.replace(
+    /(<[^>]*>[^]*?<\/[^>]*>)/g,
+    (match) => {
+      // Don't modify quotes in JSX attributes
+      return match.replace(
+        /(?<!=['"]\{?)(?<!className=["'])(?<!\{)['"](?!['"])/g,
+        (quote) => quote === '"' ? '&quot;' : '&apos;'
+      );
+    }
+  );
+
+  // Restore code blocks
+  return processedContent.replace(
+    /__CODE_BLOCK_(\d+)__/g,
+    (_, index) => codeBlocks[parseInt(index)]
   );
 }
 
 function processFile(filePath: string) {
-  try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const fixedContent = fixQuotes(content);
-    
-    if (content !== fixedContent) {
-      fs.writeFileSync(filePath, fixedContent);
-      console.log(`✅ Fixed quotes in ${path.basename(filePath)}`);
-    }
-  } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error);
+  const content = fs.readFileSync(filePath, 'utf8');
+  const updatedContent = escapeQuotes(content);
+  
+  if (content !== updatedContent) {
+    fs.writeFileSync(filePath, updatedContent);
+    console.log(`Updated quotes in ${filePath}`);
   }
 }
 
@@ -34,18 +49,17 @@ function processDirectory(dir: string) {
   const files = fs.readdirSync(dir);
   
   files.forEach(file => {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
     
     if (stat.isDirectory()) {
-      processDirectory(filePath);
-    } else if (file.endsWith('.tsx')) {
-      processFile(filePath);
+      processDirectory(fullPath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+      processFile(fullPath);
     }
   });
 }
 
-// Start processing
-console.log('🔍 Scanning for unescaped quotes...');
-processDirectory(questionsDir);
-console.log('✨ Done!'); 
+// Start processing from the questions directory
+const questionsDir = path.join(process.cwd(), 'src', 'app', 'questions');
+processDirectory(questionsDir); 
