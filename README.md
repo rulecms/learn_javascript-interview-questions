@@ -2,43 +2,119 @@
 
 Live site: https://master-javascript-interview-questions.vercel.app/
 
-A comprehensive web application designed to help developers prepare for JavaScript technical interviews. This platform offers:
+A comprehensive web application designed to help developers prepare for JavaScript technical interviews. This platform offers detailed explanations and examples for over 30 essential JavaScript concepts.
 
-- 📚 **Comprehensive Coverage**: In-depth exploration of essential JavaScript concepts including closures, promises, prototypes, and modern ES6+ features that frequently appear in technical interviews.
+## Features
 
-- 💡 **Real-world Examples**: Practice with authentic interview questions from leading tech companies, accompanied by detailed explanations and solutions.
+### 📚 Comprehensive Topic Coverage
 
-- 🎯 **Interactive Learning**: Hands-on coding challenges with immediate feedback to reinforce your understanding of key concepts.
+- **Core JavaScript Concepts**
+  - Closures and Scope
+  - Prototypes and Inheritance
+  - Hoisting
+  - 'this' Keyword
+  - Variable Declarations (var/let/const)
 
-- 🚀 **Structured Learning Path**: A carefully curated progression from fundamental concepts to advanced topics, aligned with what hiring managers expect.
+- **Asynchronous JavaScript**
+  - Event Loop
+  - Promises and Async/Await
+  - Advanced Async Patterns
 
-Built with Next.js and modern web technologies, this platform provides an intuitive, responsive interface for both desktop and mobile users. Whether you're preparing for your first JavaScript interview or looking to strengthen your existing knowledge, this resource offers valuable practice material and insights.
+- **Design Patterns**
+  - Common JavaScript Patterns
+  - Object Creation Patterns
+  - Module Systems
+  - Error Handling
 
-Visit our [live site](https://master-javascript-interview-questions.vercel.app/) to start your interview preparation journey.
+- **Performance**
+  - Optimization Techniques
+  - Memory Management
+  - DOM Manipulation
 
+- **Modern JavaScript**
+  - ES6+ Features
+  - TypeScript Fundamentals
+  - Web Storage APIs
+  - Modern Web APIs
 
-## Project Wizard Creation Notes
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+- **Testing & Security**
+  - Testing Approaches
+  - Security Best Practices
+
+### 💡 Key Features
+
+- Detailed explanations with practical examples
+- Real-world code samples
+- Best practices and common pitfalls
+- Interview follow-up questions
+- Mobile-responsive design
+- Dark mode support
+
+### 🎯 Learning Resources
+
+- Interactive code examples
+- Comprehensive explanations
+- Common interview questions
+- Best practices for each topic
+- Performance considerations
+
+## Technical Stack
+
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **Typography**: Geist Font
+- **Language**: TypeScript
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/javascript-interview-questions.git
+```
 
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- Built with Next.js
+- Styled with Tailwind CSS
+- Fonts by Vercel
+- Community contributions welcome
+
+## Project Status
+
+This project is actively maintained and regularly updated with new content and features. If you find any issues or have suggestions for improvements, please open an issue on GitHub.
+
+## Project Wizard Creation Notes
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Learn More
 
