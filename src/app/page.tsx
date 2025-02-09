@@ -48,10 +48,15 @@ export default function Home() {
       <aside className="w-full lg:w-80 lg:min-h-screen p-6 border-r border-black/[.08] dark:border-white/[.145] overflow-y-auto">
         <div className="sticky top-6">
           <h2 className="text-xl font-bold mb-4">All Topics</h2>
-          <nav className="space-y-6">
+          <nav className="space-y-6" data-testid="categories-sidebar">
             {Object.entries(categories).map(([key, category]) => (
               <div key={key}>
-                <h3 className="text-lg font-semibold mb-2 capitalize">{category.title}</h3>
+                <h3 
+                  className="text-lg font-semibold mb-2 capitalize"
+                  data-testid={`category-${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  {category.title}
+                </h3>
                 <ul className="space-y-2">
                   {getCategoryQuestions(category.slugs).map((q) => (
                     <li key={q.slug}>
