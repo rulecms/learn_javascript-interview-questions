@@ -1,5 +1,10 @@
 # Master JavaScript Interview Questions
 
+
+## RuleCMS Engineering Blog
+
+Read the companion article on the RuleCMS site: **[JavaScript Interview Foundations That Matter in Production](https://rulecms.com/engineering/javascript-interview-questions)**.
+
 Live site: https://learn-javascript-interview-questions.vercel.app/
 
 A comprehensive web application designed to help developers prepare for JavaScript technical interviews. This platform offers detailed explanations and examples for over 30 essential JavaScript concepts.
